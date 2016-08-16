@@ -1,44 +1,10 @@
 var sentence = "";
-function countBy(i,j,k){
-  var increment = [];
-  for(var index=i; index<=j; index+=k) {
-    increment.push(index);
-  }
-  return increment;
-}
-function factorialFun(fac){
-  if(fac < 0) {
-    return -1;
-  }
-  var num = 1;
-  for (var i = 1; i <= fac; i++) {
-    num *= i;
-  }
-  return num;
-}
-function factorialFunRecursion(fac){
-  if(fac > 1)
-    return fac * factorialFunRecursion(fac - 1);
-  else if(fac === 0)
-    return 1;
-  else if(fac < 0)
-    return -1;
-  else
-    return fac;
-}
-function isPalindrome(str){
-  var arrOfPal = str.split("");
-  var reversePal = arrOfPal.slice().reverse().join("");
-  if(str === reversePal) {
-     return "This is a palindrome!";
-  } else {
-    return "This isn't a palindrome!";
-  }
-}
 function isCounting(start, limit, count) {
   var increment = [];
   if(!(start&&limit&&count)){
     return "Please enter in all fields";
+  } else if (start > limit) {
+    return "please make starting number smaller than limiting number";
   }
   else if(count > limit) {
     return "Please make counting number smaller than limiting number!";
@@ -71,6 +37,35 @@ function answerChecker(answer, sentence) {
   }
   else {
     return "Guess again!";
+  }
+}
+function factorialFun(fac){
+  if(fac < 0) {
+    return -1;
+  }
+  var num = 1;
+  for (var i = 1; i <= fac; i++) {
+    num *= i;
+  }
+  return num;
+}
+function factorialFunRecursion(fac){
+  if(fac > 1)
+    return fac * factorialFunRecursion(fac - 1);
+  else if(fac === 0)
+    return 1;
+  else if(fac < 0)
+    return -1;
+  else
+    return fac;
+}
+function isPalindrome(str){
+  var arrOfPal = str.split("");
+  var reversePal = arrOfPal.slice().reverse().join("");
+  if(str === reversePal) {
+     return "This is a palindrome!";
+  } else {
+    return "This isn't a palindrome!";
   }
 }
 function primeFinder(prime) {
